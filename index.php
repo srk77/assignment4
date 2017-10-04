@@ -5,8 +5,6 @@ $obj = new main();
 class main
 {
 
-// private $html; 
-
 public function __construct()
 {
 
@@ -22,100 +20,98 @@ print_r($year);
 
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("Replace String Example");
+echo htmlTags::headingTwo("Replace String Example");
 $date = stringOperation::stringReplace('-','/',$date);
 echo $date;
 echo htmlTags::breakLine();
 
-
-echo htmlTags::headingThree("Compare String Example");
+echo htmlTags::headingTwo("String Compare");
 echo stringOperation::stringCompare($date,$tar);
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("Word Count Example");
+echo htmlTags::headingTwo("Word Count");
 echo stringOperation::stringWordcount($date);
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("Find Position Example:");
+echo htmlTags::headingTwo("String Position:");
 echo stringOperation::printPositions($date, "/");
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("String Length Example");
+echo htmlTags::headingTwo("String Length");
 echo stringOperation::stringLength($date);
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("ASCII Value Example");
+echo htmlTags::headingTwo("Return ASCII Value");
 echo stringOperation::stringASCII('2');
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("Last two characters of the string are: ");
+echo htmlTags::headingTwo("Last two characters of the string are: ");
 echo stringOperation::stringCharacter($date,8);
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("String into Array Example:");
+echo htmlTags::headingTwo("String into Array:");
 echo stringOperation::stringExplode("/",$date);
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("Check Leap Year using foreach:");
+echo htmlTags::headingTwo("Leap Year using foreach:");
 echo arrayLeapYear::arrayForeach($year); 
 echo htmlTags::breakLine();
 
-echo htmlTags::headingThree("Check Leap Year using For Loop:");
+echo htmlTags::headingTwo("Leap Year using For Loop:");
 echo arrayLeapYear::arrayIf($year);
 
 echo htmlTags::breakLine();
-}
+ }
  }
 
-  class stringOperation
+ class stringOperation
   {
-
    static public function stringReplace($src,$target,$str)
-    {
-      $str = str_replace($src,$target,$str);
-        return $str;
-    }
+   {
+     $str = str_replace($src,$target,$str);
+     return $str;
+   }
 
   static public function stringCompare($string1,$string2)
-   {
-     if($string1==$string2)
-       {
-         echo "Oops";
-       }
-        else if($string1>$string2)
-       {
-         return "The Future";
-       }
+  {
+    if($string1==$string2)
+    {
+     echo "Oops";
+    }
+     else if($string1>$string2)
+     {
+      return "The Future";
+     }
      else if($string1<$string2)
       {
          return "The Past";
 	   }
     }
 
-	     static public function printPositions($date, $val)
-	      {
-	        return strpos($date, $val);
+    static public function printPositions($date, $val)
+      {
+        return strpos($date, $val);
 
-    	   }
-	    static public function stringWordcount($string1)
-	     {
-                return str_word_count($string1);
-	       }
+      }
+    static public function stringWordcount($string1)
+     {
+     return str_word_count($string1);
+      }
 
-	 static public function stringLength($string1)
-		  {
-		    return strlen($string1);
-	     }
+    static public function stringLength($string1)
+	  {
+	    return strlen($string1);
+          }
 
-	      static public function stringASCII($string1)
-	      {
-	         return ord($string1);
-	      }
+      static public function stringASCII($string1)
+      {
+         return ord($string1);
+      }
 
-	   static public function stringCharacter($string1,$value)
-	    {
-	      return substr($string1,$value);
-	      }
+     static public function stringCharacter($string1,$value)
+    {
+      return substr($string1,$value);
+      }
 
      static public function stringExplode($value,$string1)
 	     {
@@ -127,13 +123,13 @@ echo htmlTags::breakLine();
 
       }
 
-	class arrayLeapYear 
-	{
-         static public function arrayForeach($years)
-		{
-		foreach($years as $year)
+    class arrayLeapYear 
+    {
+     static public function arrayForeach($years)
+     {
+	foreach($years as $yr)
 	        { 
-	         arrayLeapYear::checkLeapYear($year);
+	         arrayLeapYear::checkLeapYear($yr);
 	       }
 	         }
 		   static public function arrayIf($years)
@@ -168,16 +164,14 @@ echo htmlTags::breakLine();
 		         {
 				       return '<h1>' . $text . '</h1>';
 	         }
-	     static public function headingThree($text)
+	     static public function headingTwo($text)
 	        {
-	       return '<h3>' .$text . '</h1>';
+	       return '<h2>' .$text . '</h2>';
             }
 	    static  public  function  breakLine()
-																			           {
-																				        return
-																					'<br>';
-																					    }
+           {
+             return '<br>';
+        }
 																					    }
 																					    ?>
-
 
